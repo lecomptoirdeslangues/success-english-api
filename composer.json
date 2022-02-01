@@ -1,0 +1,19 @@
+{
+    "name": "success-english/api",
+    "description": "api entreprise success-english",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SuccessEnglish\\Api\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "cmrweb",
+            "email": "tykrastagames@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
