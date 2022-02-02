@@ -31,6 +31,12 @@ class Api
         return $this;
     }
 
+    public function getLicences()
+    {
+        $this->data = $this->connect("licences"); 
+        return $this;
+    }
+
     public function getData(string $format = null)
     {
         return $format == "json" ? $this->data : json_decode($this->data, true);
