@@ -17,7 +17,7 @@ class Api
     public function getUsers(string $format = null)
     {
         //success-english.fr
-        $this->data = file_get_contents("https://localhost::8070/api/{$this->publicKey}/{$this->privateKey}/users");
+        $this->data = file_get_contents("http://localhost:8070/api/{$this->publicKey}/{$this->privateKey}/users");
         return $format == "json" ? $this->data : json_decode($this->data, true);
     }
 }
