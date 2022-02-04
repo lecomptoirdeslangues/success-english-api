@@ -13,28 +13,22 @@ class Api
         $this->privateKey = $privateKey;
         return $this;
     }
-    private function connect(string $param)
+    public function call(string $param)
     {
         //success-english.fr
-        return file_get_contents("http://localhost:8070/api/{$this->publicKey}/{$this->privateKey}/{$param}");
+        return json_decode(file_get_contents("http://localhost:8070/api/call/{$this->publicKey}/{$param}"));
+    }
+    public function connect($token)
+    {
+        return file_get_contents("http://localhost:8070/api/connect/{$token->token}/{$this->privateKey}/");
+ 
     }
 
-    public function getUsers()
+    public function get(string $param)
     {
-        $this->data = $this->connect("users");
-        return $this;
-    }
-
-    public function getUser(int $id)
-    {
-        $this->data = $this->connect("user/{$id}"); 
-        return $this;
-    }
-
-    public function getLicences()
-    {
-        $this->data = $this->connect("licences"); 
-        return $this;
+        $token = $this->call($param); 
+        $this->data = $this->connect($token);
+        return json_decode($this->data,true);
     }
 
     public function getData(string $format = null)

@@ -10,8 +10,21 @@ use SuccessEnglish\Api;
 
 $api = new Api($_ENV["SE_PUBLIC_KEY"],$_ENV["SE_PRIVATE_KEY"]);
 
-echo $api->getUsers()->getData("json");
-// var_dump($api->getUsers()->getData());
+// $call = $api->call("users");//return token
 
-// var_dump($api->getUser(0)->getData("json"));
-var_dump($api->getLicences()->getData("json"));
+// $data = $api->connect($call);
+// var_dump($call,$data); 
+
+var_dump($api->get("users"));
+ 
+
+/**
+ * js
+ * http://localhost:8070/api/call/PUBLIC_KEY/users
+ * return token
+ * 
+ * backend
+ * http://localhost:8070/api/connect/TOKEN/PRIVATE_KEY
+ * return data
+ * 
+ */
