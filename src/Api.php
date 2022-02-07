@@ -14,8 +14,7 @@ class Api
         return $this;
     }
     public function call(string $param)
-    {
-        //success-english.fr
+    { 
         return json_decode(file_get_contents("https://success-english.fr/api/call/{$this->publicKey}/{$param}"));
     }
     public function connect($token)
