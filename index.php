@@ -15,16 +15,19 @@ $api = new Api($_ENV["SE_PUBLIC_KEY"],$_ENV["SE_PRIVATE_KEY"]);
 // $data = $api->connect($call);
 // var_dump($call,$data); 
 
-var_dump($api->get("users"));
- 
+var_dump($api->get("user",0));
+// users
+// user/{id}
+// licences
+// entreprises
 
 /**
  * js
- * http://localhost:8070/api/call/PUBLIC_KEY/users
+ * https://success-english.fr/api/call/PUBLIC_KEY/users
  * return token
  * 
  * backend
- * http://localhost:8070/api/connect/TOKEN/PRIVATE_KEY
+ * https://success-english.fr/api/connect/TOKEN/PRIVATE_KEY
  * return data
  * 
  */
