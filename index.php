@@ -10,10 +10,10 @@ use SuccessEnglish\Api;
 
 $api = new Api($_ENV["SE_PUBLIC_KEY"],$_ENV["SE_PRIVATE_KEY"]);
 
-// $call = $api->call("users");//return token
+// $token = $api->call("users");//return token
 
-// $data = $api->connect($call);
-// var_dump($call,$data); 
+// $data = $api->connect($token);
+// var_dump($token,$data); 
 
 var_dump($api->get("user",0));
 // users
